@@ -4,7 +4,8 @@
   (:use day2)
   (:use day3)
   (:use day4)
-  (:use day5))
+  (:use day5)
+  (:use day6))
 
 (defn foo
   "I don't do a whole lot."
@@ -23,4 +24,6 @@
     "4a" (day4a)
     "4b" (day4b)
     "5a" (day5a)
-    "5b" (day5b)))
+    "5b" (day5b)
+    "6a" (day6a)
+    "6b" (day6b)))
