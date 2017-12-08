@@ -27,7 +27,6 @@
 
 (defn updateReg
   [regs inst]
-  (println inst (:cond_if inst))
   (let [value (get regs (:cond_reg inst) 0)
         cif (getCondIf (:cond_if inst))
         check (:cond_value inst)
@@ -42,7 +41,6 @@
 
 (defn runInstList
   [instlist regs mv]
-  (println regs)
   (if instlist
     (let [newreg (updateReg regs (first instlist))]
       (runInstList (next instlist) newreg (max mv (reduce max (vals regs)))))
