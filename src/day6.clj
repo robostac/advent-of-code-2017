@@ -27,7 +27,7 @@
         z (into [] y)]
     (println (first (findSol 0 (set z) z)))))
 
-(defn day6ba
+(defn day6b
   []
   (let [y (map #(Integer. %) (str/split (read-line) #"\s"))
         z (into [] y)
