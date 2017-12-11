@@ -7,12 +7,10 @@
   (:use day5)
   (:use day6)
   (:use day7)
-  (:use day8))
-
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+  (:use day8)
+  (:use day9)
+  (:use day10)
+  (:use day11))
 
 (defn -main [& args]
   (println (nth args 1))
@@ -32,4 +30,10 @@
     "7a" (day7a)
     "7b" (day7b)
     "8a" (day8a)
-    "8b" (day8b)))
+    "8b" (day8b)
+    "9a" (day9a)
+    "9b" (day9b)
+    "10a" (day10a)
+    "10b" (day10b)
+    "11a" (day11a)
+    "11b" (day11b)))
