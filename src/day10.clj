@@ -30,20 +30,23 @@
     lst))
 
 (defn denseHash
-  [lst]
-  (println (count lst))
+  [lst b]
   (if (> (count lst) 0)
     (let [val (reduce bit-xor (subvec (into [] lst) 0 16))]
-      (concat [val]  [(denseHash (subvec (into [] lst) 16))]))
-    0))
+      (recur  (subvec (into [] lst) 16) (conj b val)))
+    b))
 
-(defn hexify [s]
-  (println s)
+(defn hexify
+  [s]
   (apply str
          (map #(format "%02x" (int %)) (flatten s))))
 
+(defn knotHash
+  [in]
+  (let [y (concat (map #(int %) (into [] in)) [17 31 73 47 23])]
+    (denseHash (fullHash (range 256) y 64 0 0) [])))
+
 (defn day10b
   []
-  (let [y (concat (map #(int %) (into [] (read-line))) [17 31 73 47 23])]
-    (println (hexify (denseHash (fullHash (range 256) y 64 0 0))))))
+  (println (hexify (knotHash (read-line)))))
     ;(println y)))
