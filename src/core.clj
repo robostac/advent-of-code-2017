@@ -19,7 +19,9 @@
   (:use day17)
   (:use day18)
   (:use day19)
-  (:use day20))
+  (:use day20)
+  (:use day21)
+  (:use day22))
 
 (defn -main [& args]
   (println (nth args 1))
@@ -63,4 +65,8 @@
     "19a" (day19a)
     "19b" (day19b)
     "20a" (day20a)
-    "20b" (day20b)))
+    "20b" (day20b)
+    "21a" (day21a)
+    "21b" (day21b)
+    "22a" (day22a)
+    "22b" (day22b)))
